@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<title>메인</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<style>
+		html,body {
+			height: 100%;
+		}
+		.wrapper {
+			height: 100%;
+			background-color: #669acf;
+		}
+		.main-title {
+			position: absolute;
+			top: 20px;
+			left: 0;
+			right: 0;
+			line-height: 36px;
+			font-size: 30px;
+			font-weight: 700;
+			text-align: center;
+			color: #fff;
+			letter-spacing: 5px;
+		}
+		.main-title span {
+			letter-spacing: 2px;
+		}
+		.middle-area-wrap {
+			display: table;
+			width: 100%;
+			height: 100%;
+		}
+		.middle-area {
+			display: table-cell;
+			height: 100%;
+			vertical-align: middle;
+		}
+		.middle-area-inner {
+			margin: 0 auto;
+			width: 300px;
+		}
+		.login-options {
+			margin: 8px 0 10px;
+		}
+		.login-options .start-join {
+			float: right;
+			font-size: 12px;
+			color: #fff;
+			text-decoration: underline;
+		}
+		.btn {
+			padding: 5px 10px;
+			min-width: 100px;
+			height: 40px;
+			vertical-align: middle;
+			border-radius: 3px;
+			border: 1px solid #b2b7d2;
+			box-sizing: border-box;
+		}
+		.btn-colored {
+			background-color: #e4dfd9;
+			color: #4a575f;
+		}
+		.input-text {
+			padding: 0 8px;
+			width: 140px;
+			height: 35px;
+			line-height: 35px;
+			border-radius: 3px;
+			border: 1px solid #b2b7d2;
+			box-sizing: border-box;
+		}
+		.input-full,
+		.btn-full {
+			width: 100%;
+		}
+	</style>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+</head>
+<body>
+	<div class="wrapper">
+		<h1 class="main-title"><span>모두의</span><br/>TODO</h1>
+		<div class="middle-area-wrap">
+			<div class="middle-area">
+				<div class="middle-area-inner">
+					<form id="loginForm" action="" method="post">
+						<input type="text" class="input-text input-full" placeholder="아이디">
+						<input type="password" class="input-text input-full" placeholder="비밀번호">
+						<div class="login-options clearfix">
+							<a class="start-join" href="#">회원가입</a>
+						</div>
+						<button type="submit" class="btn btn-full btn-colored btn-submit">로그인</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
