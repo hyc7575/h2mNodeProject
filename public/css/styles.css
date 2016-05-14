@@ -116,51 +116,76 @@ html {
 	color: #fff;
 }
 /* home */
-.todo-list-wrap {
+.todo-wrap {
 	padding: 60px 10px 0;
 }
-.todo-list {
+.todo-room {
 	position: relative;
 	margin-top: 10px;
 	border: 1px solid #fff;
 }
-.todo-list > a {
+.todo-room > a {
 	display: block;
 	padding: 10px 5px;
 }
-.todo-list-mark {
+.todo-room-mark {
 	width: 50px;
 	height: 50px;
 	border: 1px solid #fff;
 }
-.todo-list-info {
+.todo-room-info {
 	position: absolute;
 	top: 10px;
 	left: 65px;
 	width: 100%;
 }
-.todo-list-info > div {
+.todo-room-info > div {
 	padding-right: 70px;
 }
-.todo-list-info-top {
+.todo-room-info-top {
 	margin-top: 3px;
 }
-.todo-list-info h3 {
+.todo-room-info h3 {
 	float: left;
 	font-size: 16px;
 }
-.todo-list-people {
+.todo-room-people {
 	float: right;
 	font-size: 14px;
 }
-.todo-list-info-bottom {
+.todo-room-info-bottom {
 	margin-top: 18px;
 }
+.todo-room-host,
 .todo-list-host {
 	float: left;
 	font-size: 12px;
 }
+.todo-room-date,
 .todo-list-date {
 	float: right;
 	font-size: 12px;
+}
+
+/* room */
+.room-header {
+	margin-bottom: -30px;
+	text-align: center;
+}
+.room-title {
+	padding-top: 30px;
+	font-size: 20px;
+	font-weight: 700;
+	color: #fff;
+}
+
+.todo-list {
+
+}
+.todo-list > h3 {
+
+}
+
+.todo-list-contents {
+	display: none;
 }
