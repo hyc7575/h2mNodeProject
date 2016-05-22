@@ -1,4 +1,5 @@
 var myApp = angular.module('myApp',[]);
+
 myApp.controller('todoList',function($scope) {
 	$scope.listData = [
 		{
@@ -19,37 +20,14 @@ myApp.controller('todoList',function($scope) {
 		}
 	]
 
-
 	$scope.switchControl = function(t) {
 		this.todoList.staus = !this.todoList.status
 	}
 });
-myApp.controller('todoRoom',function($scope) {
-	$scope.listData = [
-		{
-			id: 1,
-			name: '세미나 준비',
-			userNum: 2,
-			maxUserNum: 8,
-			headOfTeam: '내가방장이오',
-			createdDate: '2016-05-13'
-		},
-		{
-			id: 2,
-			name: '2번방 의 선물',
-			userNum: 4,
-			maxUserNum: 8,
-			headOfTeam: '아야어엶얼암',
-			createdDate: '2016-02-17'
-		},
-		{
-			id: 3,
-			name: '내방이당!',
-			userNum: 7,
-			maxUserNum: 10,
-			headOfTeam: '감기감기',
-			createdDate: '2016-04-13'
-		}
-
-	]
+myApp.controller('todoRoom',function($scope,$http) {
+	//todoRoomList 라는 컬렉션
+	$http.get('/homeTodo').then(function(res) {
+		console.log(res.data);
+		$scope.listData =res.data;
+	});
 });
