@@ -7,39 +7,39 @@
 	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/styles.css">
 	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="js/app.js"></script>
 </head>
 <body>
 	<div class="wrapper">
 		<div class="room-header">
 			<h1 class="room-title">무슨무슨 방</h1>
 		</div>
-		<div class="todo-wrap" ng-controller="todoList">
+		<div class="todo-wrap detail" ng-controller="todoList">
 			<h2 class="sub-title">TODO</h2>
 			<ul>
 				<li class="todo-list" ng-repeat="todoList in listData">
-					<div class="todo-list-top">
-						<h3>뭐뭐 준ㅂ하기 </h3>
+					<div class="todo-list-top" ng-click="status = !status">
+						<h3>{{todoList.name}} </h3>
 						<div class="todo-list-info clearfix">
 							<span class="todo-list-host">
-								만든이 : 나
+								만든이 : {{todoList.creator}}
 							</span>
 							<span class="todo-list-date">
-								2016-05-20 까지
+								{{todoList.timeLimit}} 까지
 							</span>
 						</div>
 					</div>
-					<div  class="todo-list-contents">
-						dddd1324
+					<div ng-show="status"  class="todo-list-contents show-animate">
+						{{todoList.contents}}
 					</div>
 				</li>
 			</ul>
 		</div>
 	</div>
-
-	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-	<script src="js/app.js"></script>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 	<script>
-
+	
 	</script>
 </body>
 </html>
