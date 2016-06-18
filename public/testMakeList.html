@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<title>Document</title>
+</head>
+<body>
+	<form action="/addList" method="post">
+		<input type="hidden" id="r_id" name="r_id" value="{{}}">
+		할일: <input type="text" name="name"><br/>
+		글쓴이: <input type="text" name="creator"><br/>
+		기간: <input type="date" name="timeLimit">
+		컨텐츠 : <textarea name="contents"></textarea><br/>
+		<button type="submit">전송</button>	
+	</form>
+	<script>
+		var str = location.pathname;
+		str = str.substring(12,str.length-12);
+		var target = document.getElementById('r_id');
+		target.value = str;
+	</script>
+</body>
+</html>

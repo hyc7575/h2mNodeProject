@@ -4,11 +4,12 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no">
 	<title>메인</title>
-	<link rel="stylesheet" href="css/reset.css">
-	<link rel="stylesheet" href="css/styles.css">
+	<link rel="stylesheet" href="/css/reset.css">
+	<link rel="stylesheet" href="/css/styles.css">
 	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular-route.min.js"></script>
-	<script src="js/app.js"></script>
+	<script src="/js/app.js"></script>
+	<script src="/js/controller/todoList.js"></script>
 </head>
 <body>
 	<div class="wrapper">
@@ -17,6 +18,7 @@
 		</div>
 		<div class="todo-wrap detail" ng-controller="todoList">
 			<h2 class="sub-title">TODO</h2>
+			<a class="add-todoList" href="{{listData[0].todoRoom}}/testAddList">+</a>
 			<ul>
 				<li class="todo-list" ng-repeat="todoList in listData">
 					<div class="todo-list-top" ng-click="status = !status">
@@ -26,7 +28,7 @@
 								만든이 : {{todoList.creator}}
 							</span>
 							<span class="todo-list-date">
-								{{todoList.timeLimit}} 까지
+								{{todoList.timeLimit | date}} 까지
 							</span>
 						</div>
 					</div>

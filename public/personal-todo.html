@@ -4,11 +4,17 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no">
 	<title>메인</title>
-	<link rel="stylesheet" href="css/reset.css">
-	<link rel="stylesheet" href="css/styles.css">
+	<link rel="stylesheet" href="/css/reset.css">
+	<link rel="stylesheet" href="/css/styles.css">
 	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-	<script src="js/app.js"></script>
-	<script src="js/controller/todoRoom.js"></script>
+	<script src="/js/app.js"></script>
+	<script src="/js/controller/todoRoom.js"></script>
+	<style>
+		
+		html,body {
+			height: auto;
+		}
+	</style>
 </head>
 <body>
 	<div class="wrapper">
@@ -22,7 +28,7 @@
 			<h2 class="sub-title">TODO LIST</h2>
 			<ul>
 				<li class="todo-room" ng-repeat="todoList in listData">
-					<a class="clearfix" href="#">
+					<a class="clearfix" href="/detailTodo/{{todoList._id}}">
 						<div class="todo-room-mark"></div>
 						<div class="todo-room-info">
 							<div>
