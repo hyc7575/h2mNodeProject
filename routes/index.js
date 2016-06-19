@@ -16,6 +16,7 @@ var listschema = Schema({
 	creator: String,
 	timeLimit: Date,
 	contents: String,
+	chk: Boolean,
 	todoRoom: {type: Schema.Types.ObjectId, ref: 'TodoRoom'} 
 });
 
@@ -52,7 +53,7 @@ module.exports = function(app) {
 		console.log('들옴');
 		var id = req.params.id;
 		TodoList.find({todoRoom: id},function(err,docs) {
-			console.log(docs);
+			
 			if (err) {
 				return err;
 			}
@@ -77,6 +78,7 @@ module.exports = function(app) {
 		todoListIns.creator = body.creator;
 		todoListIns.timeLimit = body.timeLimit;
 		todoListIns.contents = body.contents;
+		todoListIns.chk = false;
 		todoListIns.todoRoom = body.r_id;
 
 		todoListIns.save(function(err) {
@@ -87,6 +89,16 @@ module.exports = function(app) {
 			res.redirect('detailTodo/'+body.r_id);
 		});
 
+	});
+	app.put('/listChk', function(req,res) {
+		var body = req.body;
+
+		TodoList.findOneAndUpdate({_id: body._id}, {chk : true} , function(err, docs) {
+			if(err) {
+				return err;
+			}
+			console.log('완료');
+		});
 	});
 	app.post('/addRoom',function(req,res) {
 		var body = req.body;

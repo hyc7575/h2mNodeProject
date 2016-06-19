@@ -93,7 +93,7 @@ html {
 	top: 0;
 	left: 0;
 	right: 0;
-
+	z-index: 10;
 }
 .tab-type-btn {
 	float: left;
@@ -118,7 +118,7 @@ html {
 }
 /* home */
 .todo-wrap {
-	padding: 60px 10px 0;
+	padding: 60px 10px 30px;
 }
 .todo-room {
 	position: relative;
@@ -193,11 +193,20 @@ html {
 .detail .todo-list:first-child {
 	border-top: 1px solid #fff;
 }
+.todo-list h3.chk {
+	text-decoration: line-through;
+}
 .todo-list-contents {
+	position: relative;
 	margin-top: 8px;
 	padding: 10px;
 	border-top: 1px solid #ddd;
 	box-sizing: border-box;
+}
+.todo-list-contents button {
+	position: absolute;
+	right: 0;
+	bottom: 0;
 }
 
 

@@ -1,13 +1,22 @@
 myApp.controller('todoList',function($scope, $http) {
-	var id = location.pathname.split('/').reverse()[0];
+	
+	$scope.r_id = location.pathname.split('/').reverse()[0];
 
-	$http.get('/detail/'+id).then(function(res) {
-		console.log(res.data);
-		$scope.listData =res.data;
-	});
 
+	$scope.listChk = function(t) {
+		$http.put('/listChk', {chk: true, _id: t.todoList._id})
+		callData();
+	}
 	
 	$scope.switchControl = function(t) {
 		this.todoList.staus = !this.todoList.status
 	}
+
+	function callData() {
+		$http.get('/detail/'+$scope.r_id).then(function(res) {
+			$scope.listData =res.data;
+		});
+	}
+
+	callData();
 });

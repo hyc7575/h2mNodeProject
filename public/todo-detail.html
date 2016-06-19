@@ -18,11 +18,11 @@
 		</div>
 		<div class="todo-wrap detail" ng-controller="todoList">
 			<h2 class="sub-title">TODO</h2>
-			<a class="add-todoList" href="{{listData[0].todoRoom}}/testAddList">+</a>
+			<a class="add-todoList" href="{{r_id}}/testAddList">+</a>
 			<ul>
 				<li class="todo-list" ng-repeat="todoList in listData">
-					<div class="todo-list-top" ng-click="status = !status">
-						<h3>{{todoList.name}} </h3>
+					<div class="todo-list-top" ng-click="!todoList.chk ? ( status = !status ) : '' ">
+						<h3 ng-class="{chk : todoList.chk}">{{todoList.name}}</h3>
 						<div class="todo-list-info clearfix">
 							<span class="todo-list-host">
 								만든이 : {{todoList.creator}}
@@ -33,7 +33,8 @@
 						</div>
 					</div>
 					<div ng-show="status"  class="todo-list-contents show-animate">
-						{{todoList.contents}}
+						{{todoList.contents}}<br/>
+						<button ng-click="listChk(this)">완료</button>
 					</div>
 				</li>
 			</ul>
